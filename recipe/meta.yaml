@@ -11,9 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
-  # Compile error on Mac OS X: harfbuzz/src/hb-shape.cc:158:5: - too many arguments provided to function-like macro invocation
-  skip: true  # [osx]
+  number: 3
 
 requirements:
   build:
@@ -45,3 +43,4 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
+    - thewchan

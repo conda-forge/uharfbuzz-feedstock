@@ -1,13 +1,13 @@
 {% set name = "uharfbuzz" %}
-{% set version = "0.39.3" %}
+{% set version = "0.39.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/uharfbuzz-{{ version }}.zip
-  sha256: 1102d9fd371cdea6a859be380a3cc554237f4cf2933bc09e98aceaeae8a42229
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/uharfbuzz-{{ version }}.tar.gz
+  sha256: 66ed5c62fa886b54b8e334fd1fbe6f0b970d3853015914366293b176d7518e5d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -26,6 +26,7 @@ requirements:
     - python
     - setuptools-scm
     - cython
+    - pkgconfig
   run:
     - python
 

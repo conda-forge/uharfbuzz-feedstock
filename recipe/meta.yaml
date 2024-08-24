@@ -21,12 +21,12 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - cython
-    - pkgconfig
   host:
     - pip
     - python
     - setuptools-scm
     - cython
+    - pkgconfig
   run:
     - python
 

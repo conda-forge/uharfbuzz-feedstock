@@ -27,6 +27,7 @@ requirements:
     - setuptools-scm
     - cython
     - pkgconfig
+    - setuptools
   run:
     - python
 

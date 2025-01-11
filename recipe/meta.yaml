@@ -1,5 +1,5 @@
 {% set name = "uharfbuzz" %}
-{% set version = "0.44.0" %}
+{% set version = "0.45.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/uharfbuzz-{{ version }}.tar.gz
-  sha256: 3bc883f9b5d803f5ede08d1ad5b91dc1c768e9de902bc44e09468457c1c2e145
+  sha256: 3ac2a9a03682f908fad471e0b80f6ba8de5427a971dbbfb82d77990edf2834a6
 
 build:
   script: {{ PYTHON }} -m pip install . -vv

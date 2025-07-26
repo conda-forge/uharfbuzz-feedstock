@@ -14,6 +14,7 @@ build:
     - export USE_SYSTEM_LIBS=1  # [unix]
     - del harfbuzz /s /q        # [win]
     - set USE_SYSTEM_LIBS=1     # [win]
+    - pkg-config --exists harfbuzz-subset --debug
     - {{ PYTHON }} -m pip install . -vv
   number: 1
 

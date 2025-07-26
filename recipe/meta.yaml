@@ -14,9 +14,14 @@ build:
     - export USE_SYSTEM_LIBS=1  # [unix]
     - del harfbuzz /s /q        # [win]
     - set USE_SYSTEM_LIBS=1     # [win]
+    # Make sure we can find the harfbuzz-subset package
+    # This command makes debugging the setup script much easier
     - pkg-config --exists harfbuzz-subset --debug
     - {{ PYTHON }} -m pip install . -vv
   number: 1
+  ignore_run_exports_from:
+    - zlib
+    - glib
 
 requirements:
   build:
@@ -36,6 +41,9 @@ requirements:
     - pkgconfig
     - setuptools
     - harfbuzz
+    # The following dependencies are needed for harfbuzz->freetype detection on windows
+    - zlib
+    - glib
   run:
     - python
 

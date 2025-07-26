@@ -1,17 +1,21 @@
-{% set name = "uharfbuzz" %}
 {% set version = "0.51.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: uharfbuzz
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/uharfbuzz-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/u/uharfbuzz/uharfbuzz-{{ version }}.tar.gz
   sha256: fbddcff72e2f6af5ce6b22ede1f91f6c019cb9dee6b5bf81f1bdbfdf83c1d47b
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script:
+    - rm -rf harfbuzz           # [unix]
+    - export USE_SYSTEM_LIBS=1  # [unix]
+    - del harfbuzz /s /q        # [win]
+    - set USE_SYSTEM_LIBS=1     # [win]
+    - {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   build:
@@ -19,8 +23,8 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
-    - cython
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
   host:
     - pip
     - python
@@ -28,6 +32,7 @@ requirements:
     - cython
     - pkgconfig
     - setuptools
+    - harfbuzz
   run:
     - python
 

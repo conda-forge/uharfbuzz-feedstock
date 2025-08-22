@@ -1,4 +1,4 @@
-{% set version = "0.51.1" %}
+{% set version = "0.51.2" %}
 
 package:
   name: uharfbuzz
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/u/uharfbuzz/uharfbuzz-{{ version }}.tar.gz
-  sha256: d651174806fef320c6a036b0ba395ce8837549de26cc65cf18ae879012d2fba0
+  sha256: f5f344668155502bfdc68b0f4bf4ee683d956ec9a31467a597b9f3c0312d638d
 
 build:
   script:
@@ -18,7 +18,7 @@ build:
     # This command makes debugging the setup script much easier
     - pkg-config --exists harfbuzz-subset --debug
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   ignore_run_exports_from:
     - zlib
     - glib

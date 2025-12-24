@@ -18,7 +18,7 @@ build:
     # This command makes debugging the setup script much easier
     - pkg-config --exists harfbuzz-subset --debug
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   ignore_run_exports_from:
     - zlib
     - glib

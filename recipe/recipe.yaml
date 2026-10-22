@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.56.3"
+  version: "0.56.4"
 
 package:
   name: uharfbuzz
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/u/uharfbuzz/uharfbuzz-${{ version }}.tar.gz
-  sha256: dbb6cc2c36b42929e4059290a980640f2391d858f6eab36e369ed4f373f96caa
+  sha256: b97f08403aaeb035ede1c56d9742b530601a251845c41d2abdab3697bc745ac0
 
 build:
   number: 0
